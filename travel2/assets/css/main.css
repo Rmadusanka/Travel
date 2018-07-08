@@ -4437,3 +4437,11 @@
 			min-width: 100%; 
 			min-height: 100%;
 		}
+
+.white-text{
+	color: white !important;
+}
+
+.main-col-header img {
+	padding: 20px;
+}
