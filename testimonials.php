@@ -370,6 +370,22 @@ body {
 	padding-bottom: 50px;
 }
 
+.btn-google {
+	background: #DD4B39;
+	color: #ffff;
+	margin-left: 20px;
+    margin-top: 10px;
+}
+
+.btn-google:hover {
+	background: #c74534;
+	color: #ffff;
+}
+
+.comment-textarea::placeholder {
+	color: gray !important;
+}
+
     </style>
 </head>
 
@@ -460,19 +476,35 @@ body {
        </div>
    </div>    
 </section>
-
 <!-- Contenedor Principal -->
 <div class="comments-container">
 		<h1>Comentarios</h1>
 		<?php if (!isset($_SESSION['logged_in'])) { ?>
-		<a href="<?= $login_url ?>">Login with Google</a>
+		<a href="<?= $login_url ?>" class="btn btn-google" ><span class="fa fa-google"></span> Sign in with Google</a>
 		<?php } ?>
 		<ul id="comments-list" class="comments-list">
-			<li>
+			<?php if (isset($_SESSION['logged_in'])) { ?>
+			<li id="commentArea">
 				<div class="comment-main-level">
 					<!-- Avatar -->
-					<div class="comment-avatar"><img src="https://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+					<div class="comment-avatar"><img src="<?php echo $_SESSION['logged_in']['image']['url']; ?>" alt=""></div>
 					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name"><a href="http://creaticode.com/blog"><?php echo $_SESSION['logged_in']['name']['givenName']; ?> <?php echo $_SESSION['logged_in']['name']['familyName']; ?></a></h6>
+							<i class="fa fa-reply"></i>
+							<i class="fa fa-heart"></i>
+						</div>
+						<div class="comment-content">
+							<textarea class="comment-textarea" name="publicComment" row="2" placeholder="Enter your comment here..." ></textarea>
+						</div>
+					</div>
+				</div>
+			</li>
+			<?php } ?>
+			<!-- <li>
+				<div class="comment-main-level">
+					<div class="comment-avatar"><img src="https://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
 					<div class="comment-box">
 						<div class="comment-head">
 							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
@@ -485,26 +517,38 @@ body {
 						</div>
 					</div>
 				</div>
-			</li>
-
+			</li> -->
+			<?php
+				$sql = "SELECT * FROM comments ORDER BY id DESC";
+				$query = mysqli_query($conn, $sql);
+				while ($res = mysqli_fetch_array($query)) {
+					$sql1 = "SELECT * FROM users WHERE oauth_uid='".$res['user_id']."'";
+					$query1 = mysqli_query($conn, $sql1);
+					if ($res1 = mysqli_fetch_array($query1)) {
+			?>
 			<li>
 				<div class="comment-main-level">
 					<!-- Avatar -->
-					<div class="comment-avatar"><img src="https://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+					<div class="comment-avatar"><img src="<?php echo $res1['picture'] ?>" alt=""></div>
 					<!-- Contenedor del Comentario -->
 					<div class="comment-box">
 						<div class="comment-head">
-							<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-							<span>hace 10 minutos</span>
+							<h6 class="comment-name"><a href=""><?php echo $res1['first_name'] ?> <?php echo $res1['last_name'] ?></a></h6>
+							<span><?php echo $res['create_at'] ?></span>
 							<i class="fa fa-reply"></i>
 							<i class="fa fa-heart"></i>
 						</div>
 						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+						<?php echo $res['comment'] ?>
 						</div>
 					</div>
 				</div>
 			</li>
+			<?php
+					} 
+				} 
+			?>
+
 		</ul>
 	</div>
 
@@ -546,6 +590,29 @@ body {
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	<script>
+		$(".comment-textarea").keypress(function(e) {
+			if (e.which == 13) {
+				var comment = $(this).val();
+				console.log(comment);
+				$.ajax({
+					method: "POST",
+					url: "comment.php",
+					data: { comment: comment },
+					dataType: 'json',
+					success: function(data){
+						$( "#commentArea" ).after(data);
+						console.log(data);
+						$(".comment-textarea").val("");
+					},
+					error: function (error) {
+						console.log(error);
+					}
+				})
+			}
+		})
+	</script>
 
 </body>
 
