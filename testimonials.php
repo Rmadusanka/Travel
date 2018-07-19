@@ -1,8 +1,15 @@
 <?php 
+session_start();
+
   $conn=mysqli_connect("localhost","root","","travel");
   if(!$conn){
       echo "connection failed".mysqli_connect_error();
   }
+
+  require_once('settings.php');
+
+	$login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
+
 ?>
 
 <!DOCTYPE HTML>
@@ -457,7 +464,9 @@ body {
 <!-- Contenedor Principal -->
 <div class="comments-container">
 		<h1>Comentarios</h1>
-
+		<?php if (!isset($_SESSION['logged_in'])) { ?>
+		<a href="<?= $login_url ?>">Login with Google</a>
+		<?php } ?>
 		<ul id="comments-list" class="comments-list">
 			<li>
 				<div class="comment-main-level">
