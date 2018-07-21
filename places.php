@@ -1,8 +1,5 @@
 <?php 
-  $conn=mysqli_connect("localhost","root","","travel");
-  if(!$conn){
-      echo "connection failed".mysqli_connect_error();
-  }
+  require 'config/config.php';
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -112,37 +109,11 @@
 <body class="subpage">
     <div class="bg-ground"></div>
     <!-- Header -->
-    <header id="header" class="alt">
-        <div class="logo">
-            <a href="index.html">Travel
-                <span>in Sri Lanka</span>
-            </a>
-        </div>
-        <a href="#menu">
-            <span>Menu</span>
-        </a>
-    </header>
+    <?php include "common/header.php"; ?>
 
     <!-- Nav -->
-    <nav id="menu">
-        <ul class="links">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="about.html">About Us</a>
-            </li>
-            <li>
-                <a href="gallery.php">Gallery</a>
-            </li>
-            <li>
-                <a href="inquiries.php">Inquiries</a>
-            </li>
-            <li>
-                <a href="testimonials.php">Testimonials</a>
-            </li>
-        </ul>
-    </nav>
+    <?php include "common/nav.php"; ?>
+
     <video autoplay muted loop id="myVideo-about">
         <source src="video/travel.mp4" type="video/mp4"> Your browser does not support HTML5 video.
     </video>

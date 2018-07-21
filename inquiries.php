@@ -73,10 +73,7 @@
 
     // require './PHPMailer/get_0auth_token.php';
 
-    $conn=mysqli_connect("localhost","root","","travel");
-    if(!$conn){
-        echo "connection failed".mysqli_connect_error();
-    }
+    require 'config/config.php';
 
     if(isset($_POST['submit'])) {
         $fname = $_POST['fname'];
@@ -143,90 +140,15 @@
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
 
-
-
-        // email config
-        // $to      = 'roshanmw91@gmail.com';
-        // $subject = 'Travel in Sri Lanka - Inquiries';
-        // $message = "
-        //             <html>
-        //                 <head>
-        //                     <title>Travel in Sri Lanka</title>
-        //                 </head>
-        //                 <body>
-        //                     <p>Dear Jhon,</p>
-        //                     <p>Thre have a inquiry from ".$fname." ".$lname.". </p>
-        //                     <table>
-        //                         <tr>
-        //                             <td>Email :</td>
-        //                             <td>".$email."</td>
-        //                         </tr>
-        //                         <tr>
-        //                             <td>Rate :</td>
-        //                             <td>".$rates."</td>
-        //                         </tr>
-        //                         <tr>
-        //                             <td>Message :</td>
-        //                             <td>".$message."</td>
-        //                         </tr>
-        //                     </table>
-        //                     <p>Thank you.</p>
-        //                 </body>
-        //             </html>
-        //             ";
-
-        // $headers = "MIME-Version: 1.0" . "\r\n";
-        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-        // $headers .= 'From:<roshanmw88@gmail.com>'. "\r\n";
-        // $headers .= 'Reply-to: '.$email;
-        
-        // ini_set("SMTP","smtp.gmail.com");
-        // ini_set("smtp_port","587");
-        // // ini_set("SMTP","ssl://smtp.gmail.com");
-        // // ini_set("smtp_port","465");
-        // ini_set('sendmail_from', 'roshanmw88@gmail.com');
-
-        // if( mail($to,$subject,$message,$headers) ) {
-        //     echo '<script>alert("Email Send, Thank you!"); </script>';
-        // } else {
-        //     echo '<script>alert("Email not Send, Try Again!"); </script>';
-        // }
     }
   ?>
 
   <!-- Header -->
-  <header id="header" class="alt">
-    <div class="logo">
-      <a href="index.html">Travel
-        <span>in Sri Lanka</span>
-      </a>
-    </div>
-    <a href="#menu">
-      <span>Menu</span>
-    </a>
-  </header>
+  <?php include "common/header.php"; ?>
 
     <!-- Nav -->
-    <nav id="menu">
-		<ul class="links">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About Us</a>
-			</li>
-			<li>
-				<a href="gallery.php">Gallery</a>
-			</li>
-			<li>
-				<a href="inquiries.php">Inquiries</a>
-			</li>
-			<li>
-				<a href="testimonials.php">Testimonials</a>
-			</li>
-		</ul>
-	</nav>
+    <?php include "common/nav.php"; ?>
+
   <!-- Main -->
   <div class="back-of-inquiries"></div>
   <div id="main" class="container">

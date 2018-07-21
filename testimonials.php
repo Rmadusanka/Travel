@@ -1,13 +1,7 @@
 <?php 
-session_start();
-
-  $conn=mysqli_connect("localhost","root","","travel");
-  if(!$conn){
-      echo "connection failed".mysqli_connect_error();
-  }
-
-  require_once('settings.php');
-
+	session_start();
+	require 'config/config.php';
+  	require_once('config/settings.php');
 	$login_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.me') . '&redirect_uri=' . urlencode(CLIENT_REDIRECT_URL) . '&response_type=code&client_id=' . CLIENT_ID . '&access_type=online';
 
 ?>
@@ -392,37 +386,11 @@ body {
 <body class="subpage" style="background:none !important; background-color:transparent !important;">
 
 	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo">
-			<a href="index.html">Travel
-				<span>in Sri Lanka</span>
-			</a>
-		</div>
-		<a href="#menu">
-			<span>Menu</span>
-		</a>
-	</header>
+	<?php include "common/header.php"; ?>
 
 	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About Us</a>
-			</li>
-			<li>
-				<a href="gallery.php">Gallery</a>
-			</li>
-			<li>
-				<a href="inquiries.php">Inquiries</a>
-			</li>
-			<li>
-				<a href="testimonials.php">Testimonials</a>
-			</li>
-		</ul>
-	</nav>
+	<?php include "common/nav.php"; ?>
+
     <div class="back-of-testimonials"></div>
     <section id="testimonial" style="background:none !important; background-color:transparent !important;">
     <div class="container">

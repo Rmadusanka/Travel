@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Road Trip by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 
 <head>
@@ -43,44 +38,11 @@
 <body class="subpage">
 
 	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo">
-			<a href="index.html">Travel
-				<span>in Sri Lanka</span>
-			</a>
-		</div>
-		<a href="#menu">
-			<span>Menu</span>
-		</a>
-	</header>
+	<?php include "common/header.php"; ?>
 
 	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About Us</a>
-			</li>
-			<li>
-				<a href="gallery.php">Gallery</a>
-			</li>
-			<li>
-				<a href="inquiries.php">Inquiries</a>
-			</li>
-			<li>
-				<a href="testimonials.php">Testimonials</a>
-			</li>
-		</ul>
-	</nav>
+	<?php include "common/nav.php"; ?>
 
-	<!-- Content -->
-	<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
 	<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
 		<div class="inner">
 			<article class="box">

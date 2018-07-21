@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Road Trip by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+
 <html>
 
 <head>
@@ -34,44 +30,10 @@
 <body class="subpage">
 
 	<!-- Header -->
-	<header id="header" class="alt">
-		<div class="logo">
-			<a href="index.html">Travel
-				<span>in Sri Lanka</span>
-			</a>
-		</div>
-		<a href="#menu">
-			<span>Menu</span>
-		</a>
-	</header>
+	<?php include "common/header.php"; ?>
 
 	<!-- Nav -->
-	<nav id="menu">
-		<ul class="links">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About Us</a>
-			</li>
-			<li>
-				<a href="gallery.php">Gallery</a>
-			</li>
-			<li>
-				<a href="inquiries.php">Inquiries</a>
-			</li>
-			<li>
-				<a href="testimonials.php">Testimonials</a>
-			</li>
-		</ul>
-	</nav>
-
-	<!-- Content -->
-	<!--
-			Note: To show a background image, set the "data-bg" attribute below
-			to the full filename of your image. This is used in each section to set
-			the background image.
-		-->
+	<?php include "common/nav.php"; ?>
 
 	<section id="post" class="wrapper bg-img">
 		<video autoplay muted loop id="myVideo-about">
@@ -106,43 +68,6 @@
 			</article>
 		</div>
 	</section>
-	<!-- <section id="post" class="wrapper bg-img">
-		<div class="inner">
-			<article class="box">
-				<header>
-					<h2>Our Main Services</h2>
-					
-				</header>
-				<div class="content">
-					<p>Vinlo Tours, we create bespoke, luxury trips around the country, Sri Lanka, giving our travelers insider access to the places 
-						they travel to. All of our trips are private and tailored completely to our customers’ needs and preferences, so when you 
-						travel with us, you know the experience you’re getting is one-of-a-kind.</p>
-
-					<p>Central to everything we do is the desire to affect positive change and enrich the lives of those we encounter along the way. 
-						We do this because it’s in our nature, and because it enables you to feel wonderful. We take every measure to ensure the trips 
-						we plan are in keeping with our social, environmental and economic values. Every Vinlo Tours journey is carbon-neutral, and we 
-						support organizations that preserve habitats and empower local communities. Your destination will certainly leave an indelible 
-						mark on you, but you needn’t worry about leaving an indelible mark on your destination. We are friendly to the environment as 
-						well as our customers.</p>
-
-				</div> -->
-	<!--<footer>-->
-	<!--<ul class="actions">-->
-	<!--<li>-->
-	<!--<a href="#" class="button alt icon fa-chevron-left">-->
-	<!--<span class="label">Previous</span>-->
-	<!--</a>-->
-	<!--</li>-->
-	<!--<li>-->
-	<!--<a href="#" class="button alt icon fa-chevron-right">-->
-	<!--<span class="label">Next</span>-->
-	<!--</a>-->
-	<!--</li>-->
-	<!--</ul>-->
-	<!--</footer>-->
-	<!-- </article>
-		</div>
-	</section> -->
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>

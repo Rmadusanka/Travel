@@ -20,11 +20,11 @@
 </head>
 
 <body>
-
+<?php include "common/nav.php"; ?>
 <!-- Header -->
 <header id="header">
     <div class="logo">
-        <a href="index.html">Travel
+        <a href="index.php">Travel
             <span>in Sri Lanka</span>
         </a>
     </div>
@@ -32,27 +32,6 @@
         <span>Menu</span>
     </a>
 </header>
-
-<!-- Nav -->
-<nav id="menu">
-    <ul class="links">
-        <li>
-            <a href="index.html"><i class="fa fa-home icons-drawer"></i>Home</a>
-        </li>
-        <li>
-            <a href="about.html"> <i class="fa fa-info-circle icons-drawer"></i>About Us</a>
-        </li>
-        <li>
-            <a href="gallery.php"> <i class="fa fa-pagelines  icons-drawer"></i>Gallery</a>
-        </li>
-        <li>
-            <a href="inquiries.php">  <i class="fa fa-bullhorn icons-drawer"></i>Inquiries</a>
-        </li>
-        <li>
-            <a href="testimonials.php"> <i class="fa fa-comments icons-drawer"></i>Testimonials</a>
-        </li>
-    </ul>
-</nav>
 
 <section id="banner" class="bg-img" data-bg="banner.jpg">
     <video autoplay muted loop id="myVideo">
@@ -91,7 +70,7 @@
                 </p>
             </div>
             <footer>
-                <a href="welcome.html" class="button alt">Learn More</a>
+                <a href="welcome.php" class="button alt">Learn More</a>
             </footer>
         </article>
     </div>
@@ -167,7 +146,7 @@
                 </div>
             </div>
             <footer>
-                <a href="places.html" class="button alt">PLACES</a>
+                <a href="places.php" class="button alt">PLACES</a>
             </footer>
         </article>
     </div>
@@ -204,7 +183,7 @@
 					</div>
 					
 					<div class="col col-4 col-sm-4 white-text main-col-header" align="center">
-							<a href="services.html" class="button alt">See More</a>
+							<a href="services.php" class="button alt">See More</a>
 						</div>
 						<div class="col col-4 col-sm-4 white-text main-col-header">
 							<a href="places.php" class="button alt">See More</a>

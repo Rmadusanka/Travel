@@ -44,37 +44,11 @@
 <body class="subpage">
 
   <!-- Header -->
-  <header id="header" class="alt">
-    <div class="logo">
-      <a href="index.html">Travel
-        <span>in Sri Lanka</span>
-      </a>
-    </div>
-    <a href="#menu">
-      <span>Menu</span>
-    </a>
-  </header>
+  <?php include "common/header.php"; ?>
 
   <!-- Nav -->
-  <nav id="menu">
-		<ul class="links">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About Us</a>
-			</li>
-			<li>
-				<a href="gallery.php">Gallery</a>
-			</li>
-			<li>
-				<a href="inquiries.php">Inquiries</a>
-			</li>
-			<li>
-				<a href="testimonials.php">Testimonials</a>
-			</li>
-		</ul>
-	</nav>
+  <?php include "common/nav.php"; ?>
+
   <div class="back-of-inquiries"></div>
   <!-- Main -->
   <div id="main" class="container">
