@@ -4511,6 +4511,7 @@
     color: white;
 	letter-spacing: 12px;
     font-size: 14px;
+	padding-top: 1rem;
 }
 
 .sri-lanka-text {
@@ -4539,5 +4540,5 @@
 .icons-drawer{
 	padding: 6px;
 	margin: 10px;
-	font-size: 25px !important;
+	font-size: 18px !important;
 }
