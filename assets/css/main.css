@@ -4535,3 +4535,9 @@
 .our-service-text {
 	color: #fff;
 }
+
+.icons-drawer{
+	padding: 6px;
+	margin: 10px;
+	font-size: 25px !important;
+}
