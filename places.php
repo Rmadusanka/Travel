@@ -1,3 +1,9 @@
+<?php 
+  $conn=mysqli_connect("localhost","root","","travel");
+  if(!$conn){
+      echo "connection failed".mysqli_connect_error();
+  }
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -150,81 +156,32 @@
                 </h2>
                 <br>
             </header>
+            <?php 
+				$sql = "SELECT * FROM place";
+				$query = mysqli_query($conn, $sql);
+				while ($res = mysqli_fetch_array($query)) {
+			?>
             <div class="col-md-5 no-padding lib-item" data-category="view">
                 <div class="lib-panel">
                     <div class="row box-shadow">
                         <div class="col-md-6">
-                            <img class="lib-img-show" src="./images/banner10.jpg">
+                            <img class="lib-img-show" src="images/places/<?php echo $res['image']; ?>">
                         </div>
                         <div class="col-md-6">
                             <div class="lib-row lib-header">
-                                Yala National Park in Sri Lanka.
+                                <?php echo $res['place']; ?>
                                 <div class="lib-header-seperator"></div>
                             </div>
                             <div class="lib-row lib-desc">
-                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.
+                                <?php echo $res['description']; ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class=""></div>
-            <div class="col-md-5 no-padding lib-item" data-category="ui">
-                <div class="lib-panel">
-                    <div class="row box-shadow">
-                        <div class="col-md-6">
-                            <img class="lib-img" src="./images/banner11.jpg">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="lib-row lib-header">
-                                Temple of the Tooth Relic in Kandy.
-                                <div class="lib-header-seperator"></div>
-                            </div>
-                            <div class="lib-row lib-desc">
-                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5 no-padding lib-item" data-category="view">
-                <div class="lib-panel">
-                    <div class="row box-shadow">
-                        <div class="col-md-6">
-                            <img class="lib-img-show" src="./images/banner10.jpg">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="lib-row lib-header">
-                                Yala National Park in Sri Lanka.
-                                <div class="lib-header-seperator"></div>
-                            </div>
-                            <div class="lib-row lib-desc">
-                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class=""></div>
-            <div class="col-md-5 no-padding lib-item" data-category="ui">
-                <div class="lib-panel">
-                    <div class="row box-shadow">
-                        <div class="col-md-6">
-                            <img class="lib-img" src="./images/banner11.jpg">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="lib-row lib-header">
-                                Temple of the Tooth Relic in Kandy.
-                                <div class="lib-header-seperator"></div>
-                            </div>
-                            <div class="lib-row lib-desc">
-                                Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+				}
+			?>
         </div>
     </div>
 
