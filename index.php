@@ -34,6 +34,7 @@
 </header>
 
 <section id="banner" class="bg-img" data-bg="banner.jpg">
+    <div class="gradiant-background"></div>
     <video autoplay muted loop id="myVideo">
         <source src="video/whale1.mp4" type="video/mp4">
         Your browser does not support HTML5 video.

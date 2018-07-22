@@ -54,12 +54,12 @@
 }
 @media screen and (min-width: 768px) {
   #overlay img {
-    width: 60%;
+    width: 80%;
   }
 }
 @media screen and (min-width: 1200px) {
   #overlay img {
-    width: 50%;
+    width: 75%;
   }
 }
 #nextButton {
