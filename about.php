@@ -55,12 +55,7 @@
 						places they travel to. All of our trips are private and tailored completely to our customers’ needs and preferences,
 						so when you travel with us, you know the experience you’re getting is one-of-a-kind.</p>
 
-					<p class="about-txt">Central to everything we do is the desire to affect positive change and enrich the lives of those we encounter along
-						the way. We do this because it’s in our nature, and because it enables you to feel wonderful. We take every measure
-						to ensure the trips we plan are in keeping with our social, environmental and economic values. Every Vinlo Tours journey
-						is carbon-neutral, and we support organizations that preserve habitats and empower local communities. Your destination
-						will certainly leave an indelible mark on you, but you needn’t worry about leaving an indelible mark on your destination.
-						We are friendly to the environment as well as our customers.</p>
+					<p class="about-txt">At Vinlo Tours, we excel at helping you get your vacation planned. Not just any vacation, but exceptional vacations filled with inspiring and life-enriching experiences. At Vinlo Tours, we know we have a responsibility to make luxury travel an uplifting experience for all concerned, from our travelers to the people they meet along the way. We believe travel has the power to be immensely positive for everyone if it’s conducted responsibly, so we work hard to give back in a number of ways.</p>
 
 				</div>
 

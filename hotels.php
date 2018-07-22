@@ -125,8 +125,7 @@
         <br>
         <div class="row row-margin-bottom back-of-place">
             <header class="col-md-12 place-header">
-                <h2>HOTELS IN
-                    <a href="srilanka">SRI LANKA</a>
+                <h2>HOTELS IN SRI LANKA</a>
                 </h2>
                 <br>
             </header>

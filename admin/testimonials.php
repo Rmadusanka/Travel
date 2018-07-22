@@ -1,3 +1,17 @@
+<?php
+    include 'config/config.php';
+
+    session_start();
+    $checkusername = $_SESSION['username'];
+    $session_sql= "SELECT * FROM user WHERE username = '".$checkusername."'";
+    $query = mysqli_query($conn,$session_sql);
+    $res = mysqli_fetch_array($query);
+    $username = $res['username'];
+    if (!$username){
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

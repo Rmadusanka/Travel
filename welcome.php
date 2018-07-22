@@ -32,6 +32,10 @@
 		.about-txt {
 			color: #fff;
 		}
+
+		.box header h3 {
+			color: #fff;
+		}
 	</style>
 </head>
 
@@ -47,20 +51,35 @@
 		<div class="inner">
 			<article class="box">
 				<header>
-					<h2>WELCOME TO VINLO TOURS</h2>
+					<h3>WELCOME TO VINLO TOURS</h3>
 
 				</header>
 				<div class="content">
+
 					<p class="about-txt">Vinlo Tours, we create bespoke, luxury trips around the country, Sri Lanka, giving our travelers insider access to the
 						places they travel to. All of our trips are private and tailored completely to our customers’ needs and preferences,
 						so when you travel with us, you know the experience you’re getting is one-of-a-kind.</p>
 
-					<p class="about-txt">Central to everything we do is the desire to affect positive change and enrich the lives of those we encounter along
-						the way. We do this because it’s in our nature, and because it enables you to feel wonderful. We take every measure
-						to ensure the trips we plan are in keeping with our social, environmental and economic values. Every Vinlo Tours journey
-						is carbon-neutral, and we support organizations that preserve habitats and empower local communities. Your destination
-						will certainly leave an indelible mark on you, but you needn’t worry about leaving an indelible mark on your destination.
-						We are friendly to the environment as well as our customers.</p>
+				</div>
+				<header>
+					<h3>VINLO TOURS EXPLORE SRI LANKA WITH US</h3>
+
+				</header>
+				<div class="content">
+					
+					<p class="in-text">
+						Travel with safe, enjoyment and the highest satisfaction. We, Vinlo Tours guarantee you the best tourism solution considering your needs. Our packages and services charges are fair and affordable. Get the highest quality service for the lowest charges in the market.
+					</p>
+
+				</div>
+				<header>
+					<h3>VINLO TOURS PIONEERS IN TOURISM SRI LANKA</h3>
+
+				</header>
+				<div class="content">
+					
+					<p class="in-text">We are the best travel guides and inbound tour solution provider in Sri Lanka. Our well satisfied customer base and their positive feedbacks of our services are the best evidence of our high quality service delivery.
+					</p>
 
 				</div>
 			</article>

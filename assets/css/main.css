@@ -4542,3 +4542,8 @@
 	margin: 10px;
 	font-size: 18px !important;
 }
+
+#map {
+	height: 400px;  /* The height is 400 pixels */
+	width: 100%;  /* The width is the width of the web page */
+   }

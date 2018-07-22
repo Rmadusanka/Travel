@@ -503,8 +503,8 @@ body {
 						<div class="comment-head">
 							<h6 class="comment-name"><a href=""><?php echo $res1['first_name'] ?> <?php echo $res1['last_name'] ?></a></h6>
 							<span><?php echo $res['create_at'] ?></span>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
+							<!-- <i class="fa fa-reply"></i>
+							<i class="fa fa-heart"></i> -->
 						</div>
 						<div class="comment-content">
 						<?php echo $res['comment'] ?>

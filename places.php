@@ -33,12 +33,14 @@
     .lib-panel img {
         width: 100%;
         background-color: transparent;
+        border-radius: 4px;
     }
 
     .lib-panel .row,
     .lib-panel .col-md-6 {
         padding: 0;
         background-color: #FFFFFF;
+        border-radius: 5px;
     }
 
 
@@ -47,7 +49,6 @@
     }
 
     .lib-panel .lib-row.lib-header {
-        background-color: #FFFFFF;
         font-size: 20px;
         padding: 10px 20px 0 20px;
     }

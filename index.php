@@ -56,22 +56,10 @@
                 <h2>WELCOME TO VINLO TOURS</h2>
             </header>
             <div class="content">
-                <p class="in-text">Vinlo Tours allows you to explore the tourism hotspots in Sri Lanka. We are proud to
-                    say that we are pioneers in travel
-                    and tourism industry with ever growing positively satisfied clientele. We will create unforgettable
-                    tourism experience
-                    to you.</p>
-
-                <p class="in-text">
-                    Travel with safe, enjoyment and the highest satisfaction. We, Vinlo Tours guarantee you the best
-                    tourism solution considering
-                    your needs. Our packages and services charges are fair and affordable. Get the highest quality
-                    service for the lowest
-                    charges in the market.
-                </p>
+                <p class="in-text">Vinlo Tours allows you to explore the tourism hotspots in Sri Lanka. We are proud to say that we are pioneers in travel and tourism industry with ever growing positively satisfied clientele. We will create unforgettable tourism experience to you.</p>
             </div>
             <footer>
-                <a href="welcome.php" class="button alt">Learn More</a>
+                <a href="welcome.php" class="button alt">See More</a>
             </footer>
         </article>
     </div>
@@ -243,8 +231,8 @@
 
 <!-- Footer -->
 <footer id="footer">
+    <div id="map"></div>
     <div class="inner">
-
         <ul class="icons">
             <li>
                 <a href="#" class="icon round fa-twitter">
@@ -279,6 +267,22 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/crosal-thumbnails.js"></script>
+
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 6.9781805, lng: 79.9299431};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 16, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLKXB6XR6sh8b7WgMKNpy6Nh2StiOBqws&callback=initMap">
+</script>
 
 </body>
 
