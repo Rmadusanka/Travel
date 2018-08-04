@@ -108,7 +108,7 @@
 </style>
 
 <body class="subpage">
-    <div class="bg-ground"></div>
+    <div class="bg-ground" style="margin-left: -20px;" ></div>
     <!-- Header -->
     <?php include "common/header.php"; ?>
 

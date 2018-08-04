@@ -137,12 +137,12 @@
             $mail->send();
             echo "<script type=\"text/javascript\">
                             alert(\"Message Sent Successfully...\");
-                            window.location = \"index.php\"
+                            window.location = \"inquiries.php\"
                         </script>";
         } catch (Exception $e) {
             echo "<script type=\"text/javascript\">
                             alert(\"Message Could not be Sent Successfully...\");
-                            window.location = \"testimonials.php\"
+                            window.location = \"inquiries.php\"
                         </script>";
         }
 

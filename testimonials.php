@@ -39,7 +39,7 @@ h2 {
 }
 
 #testimonial .fa.fa-quote-right{
-	color:#5db4c0;
+	color:#eee;
 	font-size:30px;
 }
 
@@ -55,11 +55,11 @@ h2 {
     height: 150px; 
     margin: 0 auto;
     border-radius: 50%;
-    border: 1px solid #5db4c0; 
+    border: 1px solid #eee; 
 }
 
 #testimonial .carousel-indicators  li {
-    background-color: #5db4c0;
+    background-color: #eee;
     height: 13px;
     width: 13px;
     margin: 5px;
