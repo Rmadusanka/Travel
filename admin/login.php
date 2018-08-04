@@ -29,8 +29,9 @@ include 'config/config.php';
 $error = "";
 
 if(isset($_POST['login'])){
+  $uid= mysqli_real_escape_string($conn, $_POST['username']);
   
-  $username = $_POST['username'];
+  $username = $uid;
   $password = md5($_POST['password']);
      if($username != '' and $password != ''){
   

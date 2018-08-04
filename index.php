@@ -17,6 +17,29 @@
           media="all">
     <link href="./assets/css/crosal-thumbnail.css" rel="stylesheet" media="all">
     <meta name="theme-color" content="#212121">
+
+    <script type="text/javascript">
+
+        var myvid = document.getElementById('myVideo');
+
+        myvid.addEventListener('ended', function(e) {
+        // get the active source and the next video source.
+        // I set it so if there's no next, it loops to the first one
+        var activesource = document.querySelector("#myVideo source.active");
+        var nextsource = document.querySelector("#myVideo source.active + source") || document.querySelector("#myvideo source:first-child");
+        
+        // deactivate current source, and activate next one
+        activesource.className = "";
+        nextsource.className = "active";
+        
+        // update the video source and play
+        myvid.src = nextsource.src;
+        myvid.play();
+        
+        });
+        
+	   </script>
+
 </head>
 
 <body>
@@ -36,7 +59,8 @@
 <section id="banner" class="bg-img" data-bg="banner.jpg">
     <div class="gradiant-background"></div>
     <video autoplay muted loop id="myVideo">
-        <source src="video/welcome_home.mp4" type="video/mp4">
+        <source class="active" src="video/welcome_home.mp4" type="video/mp4" />
+        <source src="video/sss.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
     </video>
     <div class="inner">
@@ -56,7 +80,7 @@
                 <h2>WELCOME TO VINLO TOURS</h2>
             </header>
             <div class="content">
-                <p class="in-text">Vinlo Tours allows you to explore the tourism hotspots in Sri Lanka. We are proud to say that we are pioneers in travel and tourism industry with ever growing positively satisfied clientele. We will create unforgettable tourism experience to you.</p>
+                <p class="in-text">Vinlo Tours allows you to explore the tourism hotspots in Sri Lanka. We are proud to say that we are pioneers in travel and tourism industry with ever growing positively satisfied clientele and unforgettable tourism experience for you.</p>
             </div>
             <footer>
                 <a href="welcome.php" class="button alt">See More</a>
@@ -200,14 +224,14 @@
 
                             <p >KDH/Flat Super GL.</p>
                             <p >Hiace Highroof.</p>
-                             <p >Axio hybrid</p>
+                            <p >Axio hybrid</p>
 
                     </div>
                     <div class="col col-md-4 col-sm-12 ">
                         <img class="img-fluid" src="images/jeep_thumbnail.png">
                         <!--<h6 class="text-left">Vehicles</h6>-->
 
-                            <p>Jeep (Serrento)</p>
+                            <p>Jeep (Sorento)</p>
 
 
                     </div>
