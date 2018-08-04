@@ -85,7 +85,7 @@
 			</article>
 		</div>
 		<video autoplay muted loop id="myVideo-place">
-			<source src="video/monkey.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+			<source src="video/welcome_vilno.mp4" type="video/mp4"> Your browser does not support HTML5 video.
 		</video>
 	</section>
 

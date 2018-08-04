@@ -28,7 +28,7 @@
 </head>
 
 <body class="subpage">
-
+	<div class="bg-ground"></div>
 	<!-- Header -->
 	<?php include "common/header.php"; ?>
 
@@ -36,9 +36,6 @@
 	<?php include "common/nav.php"; ?>
 
 	<section id="post" class="wrapper bg-img">
-		<video autoplay muted loop id="myVideo-about">
-			<source src="video/rain.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-		</video>
 		<div class="inner">
 			<article class="box">
 				<header>
@@ -47,7 +44,7 @@
 				</header>
 				<div class="content">
 					<video width="400" controls>
-						<source src="video/whale1.mp4" type="video/mp4">
+						<source src="video/whale.mp4" type="video/mp4">
 						Your browser does not support HTML5 video.
 					</video>
 					<br>	

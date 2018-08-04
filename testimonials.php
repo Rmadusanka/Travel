@@ -130,7 +130,7 @@ body {
 /**
  * Lineas / Detalles
  -----------------------*/
-.comments-list:before {
+/* .comments-list:before {
 	content: '';
 	width: 2px;
 	height: 100%;
@@ -138,9 +138,9 @@ body {
 	position: absolute;
 	left: 32px;
 	top: 0;
-}
+} */
 
-.comments-list:after {
+/* .comments-list:after {
 	content: '';
 	position: absolute;
 	background: #c7cacb;
@@ -152,7 +152,7 @@ body {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-}
+} */
 
 .reply-list:before, .reply-list:after {display: none;}
 .reply-list li:before {
@@ -446,7 +446,7 @@ body {
 </section>
 <!-- Contenedor Principal -->
 <div class="comments-container">
-		<h1>Comentarios</h1>
+		<h2 style="margin-left: 20px; color:#fff;">Comentarios</h2>
 		<?php if (!isset($_SESSION['logged_in'])) { ?>
 		<a href="<?= $login_url ?>" class="btn btn-google" ><span class="fa fa-google"></span> Sign in with Google</a>
 		<?php } ?>
@@ -460,8 +460,6 @@ body {
 					<div class="comment-box">
 						<div class="comment-head">
 							<h6 class="comment-name"><a href="http://creaticode.com/blog"><?php echo $_SESSION['logged_in']['name']['givenName']; ?> <?php echo $_SESSION['logged_in']['name']['familyName']; ?></a></h6>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
 						</div>
 						<div class="comment-content">
 							<textarea class="comment-textarea" name="publicComment" row="2" placeholder="Enter your comment here..." ></textarea>

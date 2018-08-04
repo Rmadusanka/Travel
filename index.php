@@ -177,9 +177,6 @@
 						<div class="col col-4 col-sm-4 white-text main-col-header">
 							<a href="places.php" class="button alt">See More</a>
 						</div>
-						<div class="col col-4 col-sm-4 white-text main-col-header">
-							<a href="hotels.php" class="button alt">See More</a>
-						</div>
                 </div>
             </div>
         </article>

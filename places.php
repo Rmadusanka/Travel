@@ -114,10 +114,6 @@
 
     <!-- Nav -->
     <?php include "common/nav.php"; ?>
-
-    <video autoplay muted loop id="myVideo-about">
-        <source src="video/travel.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-    </video>
     <!-- Main -->
     <div class="container">
         <br>
