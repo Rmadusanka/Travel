@@ -40,7 +40,7 @@
 </head>
 
 <body class="subpage">
-
+<div class="bg-ground"></div>
 	<!-- Header -->
 	<?php include "common/header.php"; ?>
 
@@ -84,9 +84,9 @@
 				</div>
 			</article>
 		</div>
-		<video autoplay muted loop id="myVideo-place">
+		<!-- <video autoplay muted loop id="myVideo-place">
 			<source src="video/welcome_vilno.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-		</video>
+		</video> -->
 	</section>
 
 	<!-- Scripts -->
