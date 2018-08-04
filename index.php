@@ -35,8 +35,7 @@
 
 <section id="banner" class="bg-img" data-bg="banner.jpg">
     <div class="gradiant-background"></div>
-    <video autoplay muted loop id="myVideo">
-        <source src="video/welcome_home.mp4" type="video/mp4">
+    <video autoplay muted id="myVideo">
         Your browser does not support HTML5 video.
     </video>
     <div class="inner">
@@ -255,7 +254,32 @@
 
     </div>
 </footer>
+<script>
+    
+    var videoSource = new Array();
+    videoSource[0]='video/1.mp4';
+    videoSource[1]='video/2.mp4';
+    videoSource[2]='video/3.mp4';
+    var videoCount = videoSource.length;
+    var vidIndex = 0;
+    document.getElementById("myVideo").setAttribute("src",videoSource[0]);
 
+ 
+    function videoPlay(videoNum)
+    {
+        document.getElementById("myVideo").setAttribute("src",videoSource[videoNum]);
+        document.getElementById("myVideo").load();
+        document.getElementById("myVideo").play();
+    }
+
+    document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+
+    function myHandler() {
+        vidIndex = (vidIndex+1)%videoCount;
+        videoPlay(vidIndex); 
+    }
+    
+</script>
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -264,9 +288,9 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/crosal-thumbnails.js"></script>
-
 <script>
 // Initialize and add the map
+
 function initMap() {
   // The location of Uluru
   var uluru = {lat: 6.9781805, lng: 79.9299431};
