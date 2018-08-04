@@ -43,11 +43,9 @@
 
 				</header>
 				<div class="content">
-					<video width="400" controls>
-						<source src="video/whale.mp4" type="video/mp4">
-						Your browser does not support HTML5 video.
-					</video>
-					<br>	
+					<iframe width="500" height="300" src="https://www.youtube.com/embed/9dR9YHO89I8?list=LLhBFLHiuOQyX1u3vdHWbfqQ&t=1">
+					</iframe>
+					<hr>
 					<p class="our-service-text">Whale Watching. The ever smiling, mischievous dolphins will put on a show while some of the oldest and the largest sea creatures, 
 						the humpback and the blue whales, will nonchalantly glide past you, when you embark on a whale/ dolphin watching excursion off the Southern, 
 						Eastern or the West coast of Sri Lanka.</p>

@@ -47,7 +47,7 @@
 	<!-- Nav -->
 	<?php include "common/nav.php"; ?>
 
-	<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+	<section id="post" class="wrapper">
 		<div class="inner">
 			<article class="box">
 				<header>

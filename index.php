@@ -47,8 +47,8 @@
 <!-- Header -->
 <header id="header">
     <div class="logo">
-        <a href="index.php">Travel
-            <span>in Sri Lanka</span>
+        <a href="index.php">Vinlo
+            <span>Tours</span>
         </a>
     </div>
     <a href="#menu">
