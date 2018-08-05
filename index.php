@@ -18,31 +18,158 @@
     <link href="./assets/css/crosal-thumbnail.css" rel="stylesheet" media="all">
     <meta name="theme-color" content="#212121">
 
-    <script type="text/javascript">
+    <script>
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");
+	});
 
-        var myvid = document.getElementById('myVideo');
 
-        myvid.addEventListener('ended', function(e) {
-        // get the active source and the next video source.
-        // I set it so if there's no next, it loops to the first one
-        var activesource = document.querySelector("#myVideo source.active");
-        var nextsource = document.querySelector("#myVideo source.active + source") || document.querySelector("#myvideo source:first-child");
-        
-        // deactivate current source, and activate next one
-        activesource.className = "";
-        nextsource.className = "active";
-        
-        // update the video source and play
-        myvid.src = nextsource.src;
-        myvid.play();
-        
-        });
-        
-	   </script>
+
+        var tag = document.createElement('script');
+		tag.src = 'https://www.youtube.com/player_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var tv,
+		playerDefaults = {autoplay: 0, loop: 1, autohide: 1, modestbranding: 0, fs:0, rel: 0, showinfo: 0, controls: 0, disablekb: 1, enablejsapi: 0, iv_load_policy: 3};
+var vid = [ 
+			{'videoId': 'J4W37f8akNQ', 'startSeconds': 0, 'endSeconds': 6999, 'suggestedQuality': 'hd720'}
+			// {'videoId': 'J4W37f8akNQ', 'startSeconds': 465, 'endSeconds': 657, 'suggestedQuality': 'hd720'},
+			// {'videoId': 'J4W37f8akNQ', 'startSeconds': 0, 'endSeconds': 240, 'suggestedQuality': 'hd720'},
+			// {'videoId': 'J4W37f8akNQ', 'startSeconds': 19, 'endSeconds': 241, 'suggestedQuality': 'hd720'}
+		],
+		randomVid = Math.floor(Math.random() * vid.length),
+    currVid = randomVid;
+
+$('.hi em:last-of-type').html(vid.length);
+
+function onYouTubePlayerAPIReady(){
+  tv = new YT.Player('tv', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
+}
+
+function onPlayerReady(){
+  tv.loadVideoById(vid[currVid]);
+  tv.mute();
+}
+
+function onPlayerStateChange(e) {
+  if (e.data === YT.PlayerState.ENDED) {
+      tv.playVideo();
+  }
+  if (e.data == YT.PlayerState.PLAYING) {
+        $(".buffering").fadeOut("slow");
+  }
+  console.log('>>>',YT.PlayerState);
+  console.log('<<<',e.data);
+}
+
+function vidRescale(){
+
+  var w = $(window).width(),
+    h = $(window).height();
+
+  if (w/h > 16/9){
+    tv.setSize(w, w/16*9);
+    $('.tv .screen').css({'left': '0px'});
+  } else {
+    tv.setSize(h/9*16, h);
+    $('.tv .screen').css({'left': -($('.tv .screen').outerWidth()-w)/2});
+  }
+}
+
+$(window).on('load resize', function(){
+  vidRescale();
+});
+
+$('.hi span:first-of-type').on('click', function(){
+  $('#tv').toggleClass('mute');
+  $('.hi em:first-of-type').toggleClass('hidden');
+  if($('#tv').hasClass('mute')){
+    tv.mute();
+  } else {
+    tv.unMute();
+  }
+});
+
+$('.hi span:last-of-type').on('click', function(){
+  $('.hi em:nth-of-type(2)').html('~');
+  tv.pauseVideo();
+});
+    </script>
+
+<style>
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/loading.gif) center no-repeat #fff;
+}
+
+.buffering {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 19999;
+	background: url(images/loading.gif) center no-repeat #fff;
+}
+
+.blocker-click {
+    position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+
+    .tv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  
+  .screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1000;
+
+    margin: auto;
+
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+</style>
 
 </head>
 
 <body>
+<div class="se-pre-con"></div>
 <?php include "common/nav.php"; ?>
 <!-- Header -->
 <header id="header">
@@ -57,16 +184,17 @@
 </header>
 
 <section id="banner" class="bg-img" data-bg="banner.jpg">
+    <div class="buffering"></div>
     <div class="gradiant-background"></div>
-<<<<<<< HEAD
-    <video autoplay muted id="myVideo">
-=======
-    <video autoplay muted loop id="myVideo">
-        <source class="active" src="video/welcome_home.mp4" type="video/mp4" />
-        <source src="video/sss.mp4" type="video/mp4" />
->>>>>>> f003eccf7c219170ff71d48b0d74d04678a1c05b
-        Your browser does not support HTML5 video.
-    </video>
+    <!-- <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+  <iframe frameborder="0" height="100%" width="100%" 
+    src="https://www.youtube.com/embed/J4W37f8akNQ" allow="autoplay;" allowfullscreen>
+  </iframe>
+</div> -->
+  <div class="tv">
+        <div class="blocker-click" ></div>
+		<div class="screen mute" id="tv"></div>
+	</div>  
     <div class="inner">
         <header>
             <h1 class="sri-lanka-text">Sri Lanka</h1>
